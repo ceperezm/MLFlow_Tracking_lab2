@@ -8,7 +8,7 @@ data, meta = arff.loadarff('phpGUrE90.arff')
 # Convert to pandas DataFrame
 df = pd.DataFrame(data)
 
-df.head()
+print(df.head())
 
 # %% [markdown]
 # # Dataset QSAR Biodegradation
@@ -16,7 +16,7 @@ df.head()
 # %%
 df.info()
 print("*" * 40 )
-df. describe()
+print(df.describe())
 
 # %%
 #Contar los nulos
@@ -38,7 +38,7 @@ from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 numeric_cols = df.select_dtypes(include=['float64']).columns
 df[numeric_cols] = scaler.fit_transform(df[numeric_cols])
-df.head()
+print(df.head())
 
 # %%
 # Separamos x e y
